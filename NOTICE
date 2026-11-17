@@ -1,0 +1,36 @@
+Python 排盘修正规则与 school_tables.py 表格移植自 Renhuai123/ziwei-doushu
+来源：https://github.com/Renhuai123/ziwei-doushu
+固定提交：7922285d947b36610e7e31c232d8f1e2a0d0871d
+
+MIT License
+
+Copyright (c) 2026 紫微研究
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+城市数据来源：GeoNames，CC BY。基础排盘：iztro-py，MIT。
+
+国内出生地行政区划与参考坐标的数据来源、固定版本和许可见 src/ziwei/data/README.md；MIT 许可全文随该目录分发。
+
+本项目下载的数据不受本项目 MIT 代码许可覆盖：
+- 命盘 v4.0：Renhuai123/ziwei-doushu，作者王多鱼AI，主体数据 CC BY 4.0；
+  其中倪海厦《天纪》引文按上游单独许可。
+- 天纪语料：Renhuai123/nihai-tianji-corpus，CC BY-NC-SA 4.0；
+  原课程著作权归倪海厦先生及其权利继承人。
+具体下载版本与链接见 docs/DATA.md；不随代码分发语料和用户数据库。

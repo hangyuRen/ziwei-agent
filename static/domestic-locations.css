@@ -1,0 +1,26 @@
+.domesticLocationHeading{font-size:14px;font-weight:600;color:#303847;margin:2px 0 12px}
+.domesticLocationHeading span{display:block;font-size:11px;font-weight:400;color:#929ba8;margin-top:4px}
+.locationColumns{grid-template-columns:1fr 1fr 1fr;gap:6px}
+.locationColumns>div+div{padding-left:6px}
+.locationColumnLabel{font-size:10px;letter-spacing:0;padding:0 6px 8px;min-height:32px;display:flex;align-items:center}
+.locationList{height:240px}
+.locationProvince,.locationCity,.locationDistrict{display:block;width:100%;padding:9px 7px;font-size:12px;line-height:1.6;white-space:normal;overflow-wrap:anywhere}
+.locationDistrict{border:0;border-radius:8px;background:transparent;text-align:left;color:#424a57;cursor:pointer}
+.locationProvince:hover,.locationCity:hover,.locationDistrict:hover{background:#f3f5f8}
+.locationProvince.selected,.locationCity.selected,.locationDistrict.selected{background:#edf2fa;color:#345d97;font-weight:600}
+.locationDistrict small{display:block;font-size:10px;color:#929ba8;font-weight:400}
+.locationResults{max-height:300px;overflow:auto;overscroll-behavior:contain;margin-top:10px}
+.locationSearchResult{padding:11px 9px;border-bottom:1px solid #edf0f4;border-radius:0}
+.locationSearchResult small{margin-top:3px;line-height:1.7}
+#locationSearchClear{flex:none;border:0;background:transparent;color:#929ba8;font-size:22px;width:28px;height:32px;padding:0;cursor:pointer}
+.locationTrigger #selectedLocationText{min-width:0;white-space:normal;text-align:left;line-height:1.6}
+.locationPopover [aria-pressed=true]:focus-visible,.locationDistrict:focus-visible{outline:2px solid #8099c1;outline-offset:-2px}
+@media(max-width:600px){
+ .locationColumns{grid-template-columns:1fr 1fr 1fr;gap:3px}
+ .locationColumns>div+div{padding-left:3px}
+ .locationProvince,.locationCity,.locationDistrict{padding:8px 5px;font-size:11px}
+ .locationColumnLabel{font-size:9px;padding:0 3px 6px;min-height:34px}
+ .locationList{height:210px}
+ .domesticLocationHeading{font-size:13px}
+ .domesticLocationHeading span{font-size:10px}
+}

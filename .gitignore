@@ -1,0 +1,35 @@
+# Local credentials and runtime files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+deploy/certbot/
+admin-ui/
+backups/
+data/
+*.log
+*.sql.gz
+*.dump
+*.tar.gz
+
+# Generated corpus introductions must not be redistributed with the code.
+src/ziwei/data/tianji_catalog.json
+
+# Python and local tool installations
+.venv/
+.venv-*/
+.tools/
+.python/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Editors and OS metadata
+.DS_Store
+._*
+.vscode/
+.idea/

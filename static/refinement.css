@@ -1,0 +1,248 @@
+:root{
+  --ink:#17191d;--muted:#6e7480;--faint:#a2a7ae;--line:#e7e9ed;
+  --gold:#64748b;--paper:#fff;--wash:#f6f7f9;--blue:#3468c8;
+  color:var(--ink);background:#f7f8fa;
+}
+body{background:#f7f8fa}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid #4b78d0;outline-offset:3px}
+.siteHeader{background:#ffffffed;backdrop-filter:blur(18px);border-color:#e8eaee}
+.brand{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:20px;letter-spacing:-.035em;font-weight:750}
+.brand>span{color:#7f8998}.brand small{font-size:11px;letter-spacing:.03em;color:#8b929d}
+.accountBar button{font-weight:600}
+.eyebrow{color:#818b9a;font-size:10px;letter-spacing:.18em}
+.birthView{background:radial-gradient(circle at 16% 22%,#fff 0,transparent 43%),#f7f8fa}
+.birthIntro h1{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-weight:750;letter-spacing:-.075em;line-height:1.12}
+.lead{color:#6e7480;max-width:530px}
+.goldRule{background:#cbd4e3}
+.recentHeader h2{font-family:inherit;color:#303842;letter-spacing:-.02em;font-size:16px}
+.session:hover,.session.active,.sessionActions button:hover,.textButton:hover{color:var(--blue)}
+.birthCard{border-color:#e8eaee;border-radius:28px;box-shadow:0 18px 60px #1c284015,0 2px 10px #1c284008}
+.birthCardHeading{font-family:inherit;font-size:16px;font-weight:650;letter-spacing:.05em;color:#303740}
+.smallRules i{background:#e9edf2}.calendarBadge{background:#f2f4f7;color:#79818d}
+.fields input,.timeBox select,.genderBox select,#authForm input{border-color:#dde1e6;background:#fff;border-radius:12px}
+.fields select{width:100%;min-height:50px;margin-top:5px;border:1px solid #dde1e6;border-radius:12px;background:#fff;color:#20242b;padding:10px 13px;font-size:15px}
+.fieldHead em{font-style:normal;font-weight:400;color:#9098a4}
+.calendarToggle{display:flex;gap:3px;padding:4px;background:#f0f2f5;border-radius:12px}
+.calendarToggle button{border:0;background:transparent;color:#8b929d;border-radius:9px;padding:6px 13px;font-size:12px;font-weight:600}
+.calendarToggle button.active{background:#fff;color:#20242b;box-shadow:0 1px 5px #24304417}
+.leapMonthWrap{display:flex;align-items:center;gap:8px;margin:13px 0 0;color:#586477;font-size:12px;cursor:pointer}
+.leapMonthWrap input{accent-color:#3468c8}
+.calendarHint{font-size:11px;color:#87919e;margin:10px 0 0}
+.timeBox{background:#f8f9fb;border-color:#e7eaf0;border-radius:17px}.timeBox p{color:#637184}
+.formCaveat{color:#9299a3}
+.primaryButton{background:#17191d;border-color:#17191d;border-radius:14px}.primaryButton:hover{background:#303640}
+#chartNotice{color:#5c6c81}
+.chartView{background:#f7f8fa}
+.chartToolbar{background:#ffffffef;backdrop-filter:blur(16px);border-color:#e7e9ed;gap:18px}
+.backButton{color:#6d7480;border-right-color:#e8eaee}
+.toolbarIdentity{display:flex;flex-direction:column;gap:0;line-height:1.35;overflow:hidden}
+.toolbarIdentity strong{font-size:14px;letter-spacing:-.02em;overflow:hidden;text-overflow:ellipsis}
+.toolbarIdentity span{font-size:11px;color:#8b929b}
+.toolbarActions{margin-left:auto;display:flex;align-items:center;gap:10px}
+.toolbarLabel{margin-left:0;background:#f0f3f7;color:#6b7582;border-radius:8px}
+.focusToggle{border:1px solid #dfe3e9;background:#fff;color:#515b68;border-radius:9px;padding:7px 12px;font-size:11px;white-space:nowrap}
+.focusToggle:hover,.focusToggle[aria-pressed="true"]{background:#e9effa;color:#2d5ea9;border-color:#cbd9f0}
+.chartLayout{grid-template-columns:minmax(530px,47%) minmax(0,1fr);height:calc(100vh - 139px);min-height:540px}
+.chartLeft,.chartRight{height:100%;overflow:auto;overscroll-behavior:contain}
+.chartLeft{background:#f6f7f9;border-right:1px solid #e6e8ed;padding:23px clamp(18px,2vw,32px) 32px}
+.chartPanelTop{justify-content:space-between;margin-bottom:10px}
+.chartPanelTop h2{font-size:21px;font-weight:710;letter-spacing:-.04em;margin:2px 0 0}
+.boardCount{font-size:11px;color:#8d95a0;background:#fff;border:1px solid #e6e9ee;border-radius:999px;padding:5px 10px}
+.boardNote{background:none;border:0;padding:0;margin:0 0 15px;color:#89919c;font-size:11px}
+.boardScroll{background:#e7eaf0;border:1px solid #e1e5ec;border-radius:21px;padding:7px;box-shadow:0 10px 35px #2734470b}
+.chartBoard{background:transparent;gap:7px;grid-template-rows:repeat(4,minmax(140px,1fr));min-height:581px}
+.palace{background:#fff;border:1px solid #edf0f3;border-radius:15px;padding:11px;transition:background .16s,border-color .16s,box-shadow .16s;box-shadow:0 1px 3px #26324708}
+.palace:hover{background:#fafcff;border-color:#ccdaf1}
+.palace.active{background:#eff4ff;border-color:#abc4f2;box-shadow:0 0 0 1px #abc4f2}
+.palaceNumber{color:#a8afb9;font-size:9px;font-weight:600}
+.palaceName{color:#262b34;font-size:15px;font-weight:700;letter-spacing:-.025em;margin:5px 0 4px}
+.palaceStars{color:#3b65a5;font-size:11px;font-weight:650;line-height:1.35;-webkit-line-clamp:2}
+.palaceExcerpt{color:#8a929c;font-size:10px;line-height:1.45;-webkit-line-clamp:3}
+.boardCenter{border:1px solid #e5ebf4;border-radius:17px;padding:20px;background:linear-gradient(145deg,#fff 10%,#f4f7fc 100%);box-shadow:0 1px 5px #26324709}
+.boardCenter strong{font-family:inherit;font-size:23px;font-weight:730;letter-spacing:-.06em;color:#202733}
+.centerBirth{color:#8b94a1;font-size:10px}
+.centerFacts{margin:17px 0 8px;gap:7px}.centerFacts div{grid-template-columns:64px minmax(0,1fr)}
+.centerFacts span{font-size:10px;color:#9aa3af}.centerFacts b{font-size:11px;color:#465266}
+.boardCenter .teaser{color:#5d6879;font-size:11px;line-height:1.55;margin:9px 0 12px;-webkit-line-clamp:3}
+.centerTopics{border-color:#e4eaf3;padding-top:8px;gap:4px}.centerTopic{color:#647083;font-size:10px;padding:3px 0}
+.centerTopic:hover{color:var(--blue)}.centerCurrent{color:#5876a5}
+.boardFoot{color:#a0a7b1}
+.chartRight{background:#fff;padding:25px clamp(26px,3vw,52px) 60px}
+.modeSwitch{position:sticky;top:0;z-index:3;background:#f1f3f6;border:1px solid #e9ecf0;border-radius:13px;padding:3px;margin:0 0 23px}
+.modeSwitch button{padding:9px 19px;border-radius:10px;color:#777f89}
+.modeSwitch button.active{box-shadow:0 1px 5px #1a2c450f}
+.analysisPanel>.eyebrow{display:block;margin:2px 0 11px}
+.sectionNav{background:#f6f7f9;border:1px solid #eef0f3;border-radius:14px;padding:4px;gap:2px;margin-bottom:28px}
+.sectionNav button{border-radius:10px;padding:8px 12px;color:#737c88;font-size:12px}
+.sectionNav button.active{box-shadow:0 1px 5px #1b294010;color:#20252d}
+.insightLead{border:0;padding:0;margin:0 0 26px}
+.insightLead span{background:#eef3fc;color:#4267a5;border-radius:8px;padding:6px 10px;font-size:11px}
+.insightLead h2{font-family:inherit;font-weight:730;letter-spacing:-.055em;color:#222831;font-size:clamp(28px,2.7vw,38px);margin:15px 0 8px}
+.insightLead p{color:#68727e;font-size:14px}
+.detailPanel{max-width:900px}.detailPanel h2{font-size:15px;color:#707986;font-weight:650;letter-spacing:.01em;margin:0 0 13px}
+#chartContent{max-width:none}
+.reportIntro,.reportCore{border:1px solid #e8ebf0;border-radius:19px;padding:22px 25px;background:#fff;margin-bottom:16px;box-shadow:0 5px 22px #1c293708}
+.reportKicker{display:block;color:#5775a3;font-size:11px;font-weight:700;letter-spacing:.1em;margin-bottom:11px}
+#chartContent .reportIntro p,#chartContent .reportCore p,#chartContent .disclosureContent p{white-space:pre-line;font-size:14px;line-height:1.85;color:#505863;margin:0 0 13px;overflow-wrap:anywhere}
+#chartContent .reportIntro p:last-child,#chartContent .reportCore p:last-child,#chartContent .disclosureContent p:last-child{margin-bottom:0}
+#chartContent .primaryFinding{color:#27303b;font-size:15px;line-height:1.8}
+#chartContent .actionFinding{border-top:1px solid #edf0f4;padding-top:15px;color:#647080}
+.reportQuote{margin:0 0 16px;padding:21px 24px;border-left:3px solid #7d9ed5;border-radius:0 15px 15px 0;background:#f4f7fc;color:#2b405e;font-size:18px;line-height:1.65;font-weight:600;letter-spacing:-.025em}
+.reportCore h3{font-size:14px;font-weight:700;color:#2e3743;margin:0 0 12px}
+.reportDisclosure{border:1px solid #e9ecf0;border-radius:14px;background:#fff;margin:8px 0;overflow:hidden}
+.reportDisclosure summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:15px 18px;color:#343d49;font-size:13px;font-weight:650}
+.reportDisclosure summary::-webkit-details-marker{display:none}
+.reportDisclosure summary::after{content:'+';font-size:20px;line-height:1;color:#8b95a3;font-weight:350}
+.reportDisclosure[open] summary::after{content:'−'}
+.reportDisclosure[open] summary{border-bottom:1px solid #edf0f3;background:#fbfcfe}
+.disclosureContent{padding:17px 19px 21px}
+.chartLayout.readingFocus{display:block}.chartLayout.readingFocus .chartLeft{display:none}
+.chartLayout.readingFocus .chartRight{width:100%;padding-left:max(30px,calc((100% - 1040px)/2));padding-right:max(30px,calc((100% - 1040px)/2))}
+.chartLayout.chatFocus .chartRight{background:#f7f8fa}
+.chatWorkspace{border-color:#e4e8ee;border-radius:19px;box-shadow:0 8px 32px #1e2a3c0b}
+.chatPanel .questionBlock{background:#fafbfc;border-color:#e8ebef}
+.question:hover,.question.active{background:#eaf0fa;color:#284c83}.question.active .navMarker{background:#3669bc}
+.chatHeading{border-color:#edf0f3}.chatEmpty strong{font-family:inherit;font-weight:700;letter-spacing:-.05em}
+.chatEmpty>span{color:#809ad0}.chatMain .bubble.user{background:#edf2fa}
+.bubble.assistant .bubbleRole{color:#4e6fa2}.bubble.focus{outline-color:#8baee5}
+.citationLink{display:inline-flex;align-items:center;vertical-align:baseline;margin:0 2px;padding:1px 6px;border-radius:6px;background:#edf3ff;color:#3264b5;text-decoration:none;font-size:11px;font-weight:650;white-space:nowrap}
+.citationLink:hover{background:#dce9ff;text-decoration:underline}
+.citationUnlinked{color:#7e8aa0;font-size:11px}
+.composerInput{border-color:#dce2e9;box-shadow:0 5px 22px #25344a0c}
+.composerInput:focus-within{border-color:#8faee1}
+#authDialog{border-color:#e6e9ee;box-shadow:0 24px 90px #17253a27;border-radius:23px}
+#authDialog::backdrop{background:#e9edf2bd}
+@media(max-width:1100px){
+  .chartLayout{display:block;height:auto;min-height:0}
+  .chartLeft,.chartRight{height:auto;overflow:visible}
+  .chartLeft{border-right:0;border-bottom:1px solid #e6e8ed}
+  .chartBoard{max-width:760px;margin:auto;grid-template-rows:repeat(4,minmax(155px,1fr))}
+  .chartRight{padding:28px clamp(22px,4vw,55px) 55px}
+  .modeSwitch{position:static}
+  .chartLayout.readingFocus .chartRight{padding-left:clamp(22px,4vw,55px);padding-right:clamp(22px,4vw,55px)}
+}
+@media(max-width:640px){
+  .brand{font-size:18px}.brand small{display:none}
+  .chartToolbar{gap:8px;padding:9px 12px}.toolbarIdentity strong{max-width:160px}.toolbarLabel{display:none}
+  .focusToggle{font-size:10px;padding:7px 9px}
+  .chartLeft{padding:17px 12px}.boardScroll{padding:5px}.chartBoard{min-width:570px;gap:5px}
+  .chartRight{padding:21px 15px}.sectionNav{margin-bottom:20px}
+  .reportIntro,.reportCore{padding:17px}.reportQuote{font-size:16px;padding:17px}
+  .chartLayout.readingFocus .chartRight{padding:21px 15px}
+}
+
+/* 单栏命盘与会话导航 */
+.chartView{min-height:calc(100vh - 70px)}
+.chartLayout,.chartLayout.chatFocus,.chartLayout.chatOnly{display:block;min-height:calc(100vh - 70px);height:calc(100vh - 70px)}
+.chartRight,.chartLayout.chatFocus .chartRight,.chartLayout.chatOnly .chartRight{width:100%;max-width:none;height:100%;overflow:auto;padding:0 0 54px;background:#fff}
+.chartLayout.chatFocus .chartRight{background:#f7f8fa}
+.chartTopbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:74px;padding:11px clamp(20px,4vw,60px);background:#fffffff0;backdrop-filter:blur(18px);border-bottom:1px solid #e9ecf0}
+.chartTopbar .modeSwitch,.chartLayout.chatFocus .modeSwitch{position:static;margin:0;flex:none}
+.chartMenu{position:relative;min-width:0}
+.chartMenu summary{list-style:none;display:flex;align-items:center;gap:13px;min-height:42px;max-width:min(60vw,560px);padding:7px 12px;border-radius:12px;background:#f2f4f7;color:#20242b;font-weight:700;font-size:14px;cursor:pointer}
+.chartMenu summary::-webkit-details-marker{display:none}
+.chartMenu summary:hover,.chartMenu[open] summary{background:#e9edf3}
+#chartTitle{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.menuChevron{color:#677181;font-size:18px;line-height:1;transition:transform .16s}
+.chartMenu[open] .menuChevron{transform:rotate(180deg)}
+.chartMenuPopover{position:absolute;top:calc(100% + 9px);left:0;z-index:20;width:min(390px,calc(100vw - 34px));padding:12px;background:#fff;border:1px solid #e4e8ee;border-radius:18px;box-shadow:0 16px 42px #25334a24}
+.chartMenuPopover p{margin:0 0 9px;padding:8px 10px 12px;color:#79838f;font-size:11px;line-height:1.6;border-bottom:1px solid #edf0f3;overflow-wrap:anywhere}
+.chartMenuPopover button{display:block;width:100%;padding:10px 12px;border:0;border-radius:10px;text-align:left;background:transparent;color:#27303b;font-size:13px;cursor:pointer}
+.chartMenuPopover button:hover{background:#f1f4f8}
+.analysisPanel{width:min(1140px,100%);margin:0 auto;padding:30px clamp(20px,4vw,54px) 70px}
+.analysisPanel>.eyebrow{display:block;margin-bottom:16px}
+.analysisPanel .detailPanel{max-width:100%}
+.analysisPanel #chartContent{max-width:100%}
+.chatPanel{padding:18px clamp(12px,2.5vw,34px) 0}
+.chatWorkspace{grid-template-columns:245px minmax(0,1fr);height:calc(100vh - 181px);min-height:520px}
+.sessionSidebar{min-width:0;display:flex;flex-direction:column;padding:23px 13px;background:#fafbfc;border-right:1px solid #e8ebef}
+.sidebarHead{padding:0 8px 13px;border-bottom:1px solid #e9ecf0}
+.sidebarHead h3{margin:7px 0 12px;font-size:17px;letter-spacing:-.03em}
+#chatNewSession{width:100%;padding:9px 11px;border:1px solid #dce2eb;border-radius:10px;background:#fff;text-align:left;font-size:12px;font-weight:600;color:#344256;cursor:pointer}
+#chatNewSession:hover{background:#eff4fb}
+.chatSessionList{flex:1;min-height:0;overflow:auto;padding:9px 0}
+.chatSessionList .sessionEntry{padding:4px 6px 7px;border-radius:11px}
+.chatSessionList .sessionEntry:has(.session.active){background:#eaf0f8}
+.chatSessionList .session{padding:7px 5px 2px;border:0;font-size:12px}
+.chatSessionList .sessionMeta{padding:0 5px;font-size:10px}
+.chatSessionList .sessionActions{margin:3px 5px 4px}
+.chatSessionList .sessionActions button{font-size:10px}
+#chatMoreSessions{align-self:flex-start;margin:8px}
+.chatMain{min-width:0}
+.chatHistoryShell{position:relative;display:flex;flex:1;min-height:0}
+.chatMain .chatHistoryShell #history{flex:1;min-width:0;padding-left:max(78px,calc((100% - 710px)/2));padding-right:max(24px,calc((100% - 790px)/2))}
+.questionRail{position:absolute;left:13px;top:50%;z-index:3;transform:translateY(-50%);width:50px;max-height:80%;overflow:visible}
+.questionRail #questionNav{display:flex;flex-direction:column;align-items:flex-start;gap:4px;max-height:62vh;overflow-y:auto;overflow-x:visible;scrollbar-width:none}
+.questionRail #questionNav::-webkit-scrollbar{display:none}
+.questionTick{position:relative;display:block;flex:none;width:18px;height:5px;padding:0;border:0;border-radius:1px;background:#c9cfd7;cursor:pointer;transition:width .15s,background .15s}
+.questionTick:nth-child(5n){width:29px}
+.questionTick.user{width:27px;background:#aab6c8}
+.questionTick.assistant{width:16px;background:#d0d5dd}
+.questionTick:hover,.questionTick:focus-visible,.questionTick.active{width:43px;background:#252d3a}
+.questionTooltip{position:absolute;left:58px;top:var(--tooltip-top,50%);transform:translateY(-50%);z-index:5;max-width:min(260px,52vw);width:max-content;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:9px 12px;border:1px solid #dfe4eb;border-radius:10px;background:#fff;box-shadow:0 8px 22px #1d2b411d;color:#29313d;font-size:12px;text-align:left;pointer-events:none}
+.questionRail #moreQuestions{padding:3px 0;font-size:15px}
+@media(max-width:800px){
+  .chartLayout,.chartLayout.chatFocus,.chartLayout.chatOnly{height:auto;min-height:calc(100vh - 60px)}
+  .chartRight,.chartLayout.chatFocus .chartRight,.chartLayout.chatOnly .chartRight{height:auto;overflow:visible}
+  .chartTopbar{padding:9px 16px;min-height:64px}.chartMenu summary{max-width:48vw;font-size:12px}
+  .analysisPanel{padding:22px 18px 50px}
+  .chatPanel{padding:10px}.chatWorkspace{grid-template-columns:195px minmax(0,1fr);height:calc(100vh - 155px);min-height:510px}
+  .sessionSidebar{padding:15px 8px}.chatMain .chatHistoryShell #history{padding-left:69px;padding-right:17px}
+}
+@media(max-width:600px){
+  .chartTopbar{gap:8px;align-items:stretch;flex-direction:column}.chartMenu summary{max-width:100%;width:max-content}
+  .chartTopbar .modeSwitch{align-self:flex-start}
+  .chatWorkspace{display:flex;flex-direction:column;height:calc(100vh - 190px)}
+  .sessionSidebar{flex:none;max-height:150px;border-right:0;border-bottom:1px solid #e8ebef;padding:10px 12px}
+  .sidebarHead{display:flex;align-items:center;gap:8px;padding:0 0 8px}.sidebarHead .eyebrow{display:none}.sidebarHead h3{margin:0;font-size:14px}.sidebarHead #chatNewSession{width:auto;margin-left:auto;padding:6px 9px}
+  .chatSessionList{display:flex;gap:7px;overflow:auto}.chatSessionList .sessionEntry{flex:none;width:170px;padding:4px 7px;background:#f1f3f6}
+  .chatSessionList .sessionActions{display:none}.chatSessionList .sessionMeta{font-size:9px}
+  .chatMain{flex:1}.chatMain .chatHistoryShell #history{padding-left:54px;padding-right:12px}
+  .questionRail{left:9px;width:37px}.questionTick:hover,.questionTick:focus-visible,.questionTick.active{width:32px}
+}
+
+/* Named birth profiles and Beijing clock selection. */
+.birthName{display:block;width:100%;box-sizing:border-box;margin-top:10px;padding:16px 18px;border:1px solid #d5d5d7;border-radius:16px;background:#fafafa;font:inherit;color:#1d1d1f}
+.clockFields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.clockFields label{min-width:0}.clockFields select{width:100%}
+.timeSummary{display:flex;align-items:center;gap:18px;margin-top:18px}.timeSummary p{margin:0!important;color:#766748;font-size:15px;line-height:1.8}.hourBadge{display:grid;place-items:center;flex:0 0 58px;height:58px;border:1px solid #d6bc81;border-radius:50%;color:#806c43;font:600 24px serif}
+.savedChart{display:block;text-align:left;width:100%;border:0;border-bottom:1px solid #ededee;border-radius:0;background:transparent;padding:18px 4px;color:#252527;cursor:pointer}.savedChart:hover{background:#f5f5f7}.savedChart strong{display:block;font-size:15px;font-weight:500;line-height:1.7}.savedChart span{display:block;color:#86868b;font-size:13px;margin-top:5px}.savedChartActions{display:flex;justify-content:flex-end;gap:14px}.recentConversations{margin-top:24px}.recentConversations>summary{cursor:pointer;color:#86868b;font-size:14px}.srOnly{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+#nameError{color:#b42318}.birthCard .calendarHint{font-size:12px;color:#86868b;line-height:1.7}
+
+.reasoningPanel{margin:10px 0 18px;border:1px solid #e8e8ed;border-radius:14px;background:#fafafa;color:#6e6e73;max-width:100%;overflow:hidden}.reasoningPanel summary{cursor:pointer;padding:12px 16px;font-size:13px;font-weight:500}.reasoningText{padding:0 16px 16px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;line-height:1.8;max-height:320px;overflow-y:auto}.streamingAnswer{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.9}.streamingAnswer:empty{display:none}.streamingAnswer:not(:empty)::after{content:' ▍';color:#86868b}.streamFailed{opacity:.75}
+
+.aiDisclaimer{display:block;margin-top:14px;color:#99999f;font-size:12px;line-height:1.6;font-weight:400}
+
+/* Compact navigation, conversation chrome and app dialogs. */
+:root{--nav-height:68px}.siteHeader{position:relative;z-index:30;min-height:68px;height:auto;gap:16px;padding:10px clamp(18px,3vw,44px);flex-wrap:wrap}.navIdentity{display:flex;align-items:center;gap:20px;min-width:0}.brand{display:flex;align-items:center;gap:10px;white-space:nowrap}.brandLogo{width:40px;height:40px;border-radius:11px;object-fit:contain;flex:none}.brand .brandCopy{display:flex;flex-direction:column;align-items:flex-start;gap:2px;color:#1d1d1f;line-height:1.2}.brandCopy strong{font-size:18px;letter-spacing:-.04em}.brand .brandCopy small{display:block;font-size:10px;color:#8e939c;letter-spacing:.03em;margin:0}.headerModes{margin-left:auto}.siteHeader .accountBar{margin-left:0}.siteHeader .chartMenu summary{max-width:180px;min-height:36px;font-size:13px;padding:6px 10px}.siteHeader .modeSwitch{margin:0;padding:3px}.siteHeader .modeSwitch button{padding:8px 15px;font-size:13px}.chartLayout,.chartLayout.chatFocus,.chartLayout.chatOnly{height:calc(100dvh - var(--nav-height));min-height:0}.chartRight,.chartLayout.chatFocus .chartRight{padding-bottom:0}.chatPanel{padding:12px 16px}.chatWorkspace{height:calc(100dvh - var(--nav-height) - 24px);min-height:320px}.chatHeading{padding:12px 22px;min-height:46px}.chatHeading h2{margin:0;font-size:16px;line-height:1.4;font-weight:600;letter-spacing:-.02em}.chatMain #composer{padding:10px max(24px,calc((100% - 790px)/2))}.chatMain #question{min-height:44px;max-height:104px;padding:12px 54px 12px 14px;line-height:20px;resize:vertical}.chatMain #ask{width:30px;height:30px;right:7px;bottom:7px;border-radius:9px;font-size:21px}.chatMain .composerFoot{margin-top:4px;min-height:0}.composerFoot:has(#notice:empty){display:none}.chatMain #notice{display:block;font-size:11px;line-height:1.5}.chatMain .composerFoot>#notice:first-child{display:block}.actionDialog{width:min(420px,calc(100vw - 36px));padding:26px;border:1px solid #e5e5ea;border-radius:22px;background:#fff;box-shadow:0 24px 80px #0002;color:#1d1d1f}.actionDialog::backdrop{background:#1d1d1f40;backdrop-filter:blur(5px)}.actionDialog h2{margin:0 0 10px;font-size:20px;letter-spacing:-.03em}.actionDialog p{font-size:14px;color:#86868b;line-height:1.7;margin:0 0 18px}.actionDialog label{display:block;font-size:12px;color:#6e6e73}.actionDialog input{display:block;width:100%;margin-top:8px;padding:12px 14px;border:1px solid #d2d2d7;border-radius:11px;background:#fafafa;font:inherit;color:#1d1d1f}.actionDialog input:focus{outline:3px solid #0071e325;border-color:#0071e3}.actionButtons{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}.actionButtons button{min-width:82px;padding:10px 16px;border:0;border-radius:11px;background:#f2f2f7;color:#3a3a3c;font-weight:600}.actionButtons #actionConfirm{background:#1d1d1f;color:#fff}.actionButtons #actionConfirm.danger{background:#d92d20}.actionDialog #actionError{color:#b42318;font-size:12px;margin:7px 0 0}.actionDialog #actionError:empty{display:none}
+@media(max-width:800px){.siteHeader{gap:10px}.navIdentity{gap:10px}.brandCopy strong{font-size:15px}.siteHeader .chartMenu summary{max-width:125px}.chatPanel{padding:10px}.chatWorkspace{height:calc(100dvh - var(--nav-height) - 20px)}.chartLayout,.chartLayout.chatFocus{height:calc(100dvh - var(--nav-height));min-height:0}.chartRight,.chartLayout.chatFocus .chartRight{height:100%;overflow:auto}.chatHeading{padding:10px 16px}.chatMain #composer{padding:9px 16px}}
+@media(max-width:640px){:root{--nav-height:112px}.navIdentity{flex:1}.headerModes{order:3;flex-basis:100%;margin:0}.headerModes .modeSwitch{width:max-content}.brandLogo{width:34px;height:34px}.brand .brandCopy small{display:none}.siteHeader .accountBar{flex:none}.siteHeader .accountBar button{padding:8px 12px}.chatWorkspace{min-height:280px}.sessionSidebar{max-height:115px;flex:none}.sidebarHead{padding:0 4px 6px}.sidebarHead .eyebrow{display:none}.sidebarHead h3{margin:0 0 5px;font-size:13px}.chatMain{flex:1;min-height:0}.chatHeading h2{font-size:14px}}
+
+/* Larger brand mark, with a compact mobile size. */
+.siteHeader .brandLogo{width:80px;height:80px;border-radius:14px}
+.siteHeader .brand{gap:12px}
+@media(max-width:640px){.siteHeader .brandLogo{width:64px;height:64px;border-radius:12px}.siteHeader .brand{gap:9px}}
+
+/* Center the dropdown icon independently of font baselines. */
+.chartMenu .menuChevron{display:flex;align-items:center;justify-content:center;align-self:center;flex:0 0 16px;width:16px;height:16px;line-height:0}
+.chartMenu .menuChevron svg{display:block;width:16px;height:16px}
+
+/* Keep record actions beside their record, including on touch screens. */
+.savedChartEntry{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;border-bottom:1px solid #ededee;gap:8px}
+.savedChartEntry .savedChart{min-width:0;border-bottom:0;overflow-wrap:anywhere}
+.recordActions,.sessionEntry .sessionActions{display:flex;gap:2px;align-items:center;margin:0}
+.sessionEntry{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:4px;align-items:center}
+.sessionEntry .session{min-width:0;grid-column:1;grid-row:1;border-bottom:0}
+.sessionEntry .sessionMeta{grid-column:1;grid-row:2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-bottom:8px}
+.sessionEntry .sessionActions,.chatSessionList .sessionEntry .sessionActions{display:flex;grid-column:2;grid-row:1 / 3;margin:0}
+.recordActions .recordAction,.sessionEntry .sessionActions .recordAction{display:inline-flex;align-items:center;justify-content:center;flex:0 0 28px;width:28px;height:32px;padding:0;border:0;border-radius:6px;background:transparent;color:#86868b;cursor:pointer;line-height:1}
+.recordAction svg{display:block;flex:none}
+.recordActions .recordAction.delete,.sessionEntry .sessionActions .recordAction.delete{font-size:22px;font-weight:400}
+.recordActions .recordAction:hover,.sessionEntry .sessionActions .recordAction:hover{background:#eaf0f8;color:var(--blue)}
+.recordActions .recordAction.delete:hover,.sessionEntry .sessionActions .recordAction.delete:hover{background:#fff0ef;color:#b43d38}
+.recordAction:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+.chartRight .chatWorkspace .sessionSidebar{max-height:none}
+.chartRight .sessionSidebar .chatSessionList{display:block}
+.chartRight .chatSessionList .sessionEntry{width:auto}
+.chartRight .sessionSidebar .sidebarHead{display:block}
+.chartRight .sessionSidebar .sidebarHead #chatNewSession{width:100%;margin:0}
+@media(max-width:600px){.sessionEntry{grid-template-columns:minmax(0,1fr) 28px}.sessionEntry .sessionActions,.chatSessionList .sessionEntry .sessionActions{flex-direction:column;gap:0}}

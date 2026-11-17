@@ -1,0 +1,11 @@
+[Unit]
+Description=Renew Ziwei HTTPS certificates and reload Nginx
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/ziwei-agent
+ExecStart=/bin/sh /home/ziwei-agent/deploy/renew-certificates.sh
+TimeoutStartSec=30min

@@ -1,0 +1,42 @@
+[project]
+name = "ziwei-agent"
+version = "0.1.0"
+description = "紫微命盘与天纪证据问答服务"
+requires-python = ">=3.12"
+license = "MIT"
+readme = "README.md"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.34,<1",
+  "pydantic>=2.10,<3",
+  "asyncpg>=0.30,<1",
+  "httpx>=0.28,<1",
+  "PyJWT>=2.10,<3",
+  "argon2-cffi>=25,<26",
+  "regex>=2025.9",
+  "lunar-python==1.4.9",
+  "iztro-py==0.5.0",
+  "geonamescache==3.0.0",
+  "tzdata>=2025.2",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9", "pytest-asyncio>=0.25,<1"]
+
+[project.scripts]
+ziwei-import = "ziwei.etl:main"
+ziwei-index = "ziwei.search:main"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ziwei = ["data/*.json", "data/*.md", "data/*.txt"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+asyncio_mode = "auto"

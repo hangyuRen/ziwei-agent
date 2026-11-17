@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>紫微研习 · 命盘与天纪解读</title>
+  <link rel="icon" type="image/png" href="/static/favicon.png">
+  <link rel="stylesheet" href="/static/theme.css">
+  <link rel="stylesheet" href="/static/refinement.css?v=records-20261109">
+  <link rel="stylesheet" href="/static/workspace.css?v=compact-20261109">
+  <link rel="stylesheet" href="/static/compact-chart.css?v=compact-20261109">
+  <link rel="stylesheet" href="/static/domestic-locations.css?v=20261110">
+  <link rel="stylesheet" href="/static/chart-schools.css?v=20261110">
+  <script src="/static/palace-board.js?v=birth-times-20261110" defer></script>
+  <script src="/static/app.js?v=birth-times-20261110" defer></script>
+</head>
+<body>
+  <header class="siteHeader">
+    <div class="navIdentity"><button id="homeBrand" class="brand" type="button" aria-label="返回生辰输入页"><img class="brandLogo" src="/static/logo.png" width="40" height="40" alt=""><span class="brandCopy"><strong>紫微研习</strong><small>命盘与天纪</small></span></button><details id="chartMenu" class="chartMenu hidden"><summary><span id="chartTitle">紫微命盘</span><span class="menuChevron" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></summary><div class="chartMenuPopover"><p id="chartMeta"></p><button id="backToBirth" type="button">修改生辰</button><button id="newChart" type="button">排一张新的</button><button id="allRecords" type="button">查看最近会话</button></div></details></div>
+    <div class="accountBar"><span id="account">访客</span><button id="authButton" type="button">登录 / 注册</button><button id="logoutButton" class="hidden" type="button">退出登录</button></div>
+  </header>
+
+  <section id="birthView" class="birthView" aria-label="选择生辰">
+    <div class="birthIntro">
+      <p class="eyebrow">01 / DESTINY ENGINE</p>
+      <h1>紫微命盘</h1>
+      <p class="lead">输入出生年月日与时辰，查看命盘原文，并结合《天纪》资料深入研习。</p>
+      <div class="goldRule"></div>
+      <div class="recentHeader"><h2>最近命盘</h2><span id="savedChartCount"></span></div><p id="savedChartHint" class="secondary">登录后，排盘记录会保存到账号。</p><div id="savedChartList" class="savedChartList"></div><div class="savedChartActions"><button id="moreCharts" type="button" class="textButton hidden">加载更多命盘</button><button id="clearCharts" type="button" class="textButton hidden">清空全部</button></div><details class="recentConversations"><summary>最近对话 <span id="recentCount"></span></summary>
+      <p id="guestHint" class="secondary">登录后可保存提问与命盘会话。</p>
+      <div id="sessionList"></div>
+      <button id="moreSessions" class="textButton hidden" type="button">加载更多会话</button>
+      </details><button id="newChat" class="textButton hidden" type="button">开启新会话 →</button>
+    </div>
+
+    <div class="birthCard">
+      <div class="birthCardHeading"><span>── 输入生辰信息 ──</span><div class="smallRules" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+      <div class="formGroup"><label for="birthName">姓名</label><input id="birthName" class="birthName" maxlength="80" required autocomplete="name" placeholder="请输入姓名"><small id="nameError" class="fieldHelp" role="status"></small></div>
+      <div class="formGroup">
+        <div class="fieldHead"><span>出生日期 <em id="calendarLabel">（公历）</em></span><div class="calendarToggle" role="group" aria-label="选择历法"><button id="solarMode" class="active" type="button" aria-pressed="true">公历</button><button id="lunarMode" type="button" aria-pressed="false">农历</button></div></div>
+        <div class="dateFields fields"><label>年份<select id="year" aria-label="出生年份"></select></label><label>月份<select id="month" aria-label="出生月份"></select></label><label>日期<select id="day" aria-label="出生日期"></select></label></div>
+        <label id="leapMonthWrap" class="leapMonthWrap hidden"><input id="leapMonth" type="checkbox"> 闰月</label><p id="calendarHint" class="calendarHint"></p>
+      </div>
+      <div class="formGroup"><div class="fieldHead"><span>出生时间（北京时间）</span></div><div class="timeBox"><div class="clockFields"><label><span class="srOnly">出生小时</span><select id="hour" aria-label="出生小时"></select></label><label><span class="srOnly">出生分钟</span><select id="minute" aria-label="出生分钟"></select></label></div><div class="timeSummary"><span id="hourBadge" class="hourBadge">子</span><p id="hourHint" aria-live="polite"></p></div></div><p class="calendarHint"></p></div>
+      <div class="formGroup locationGroup"><div class="fieldHead"><label for="locationTrigger">出生地点 <em>用于真太阳时校正</em></label></div>
+        <div class="locationPicker" id="locationPicker"><input id="birthRegion" type="hidden" value="domestic"><input id="birthLocation" type="hidden">
+          <button id="locationTrigger" class="locationTrigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="locationPopover"><span id="selectedLocationText">选择出生地</span><span class="locationChevron" aria-hidden="true">⌄</span></button>
+          <div id="locationPopover" class="locationPopover hidden" role="dialog" aria-label="选择出生地"><div class="domesticLocationHeading">国内出生地 <span>含港澳台 · 省、市、区县三级选择</span></div>
+            <div class="locationSearchWrap"><span aria-hidden="true">⌕</span><input id="locationSearch" placeholder="搜索省、市或区县，如：朝阳、武侯…" aria-label="搜索出生区县" autocomplete="off"><button id="locationSearchClear" class="hidden" type="button" aria-label="清除出生地搜索">×</button></div>
+            <div id="locationColumns" class="locationColumns"><div><div class="locationColumnLabel">省 / 自治区 / 直辖市</div><div id="locationGroups" class="locationList" role="group" aria-label="选择省级地区"></div></div><div><div class="locationColumnLabel">城市 / 地区</div><div id="locationCities" class="locationList" role="group" aria-label="选择城市"></div></div><div><div class="locationColumnLabel">区 / 县 / 县级市</div><div id="locationDistricts" class="locationList" role="group" aria-label="选择区县"></div></div></div><div id="locationResults" class="locationResults hidden" role="group" aria-label="区县搜索结果"></div><p id="locationStatus" class="locationStatus" role="status"></p>
+          </div></div><p id="locationHint" class="calendarHint">请选择出生区县，中国大陆按北京时间填写。</p>
+        <details class="timeFoldDetails"><summary>夏令时回拨的重复时间</summary><label for="timeFold">仅当出生时刻出现两次时选择</label><select id="timeFold"><option value="0">第一次出现（默认）</option><option value="1">第二次出现</option></select></details>
+      </div>
+      <div class="formGroup"><div class="fieldHead"><span>性别</span></div><div class="genderBox"><select id="gender" aria-label="性别"><option value="male">♂ 男</option><option value="female">♀ 女</option></select></div></div>
+      <button id="loadChart" class="primaryButton" type="button">立即起盘 · 查看命盘解析 <span aria-hidden="true">→</span></button>
+      <p id="chartNotice" role="status"></p>
+    </div>
+  </section>
+
+  <section id="chartBox" class="chartView hidden" aria-label="命盘与解读">
+    <div class="chartLayout">
+      <section id="natalPanel" class="natalPanel"><div class="natalHeading"><div><span class="eyebrow">NATAL CHART / 01</span><h2>本命十二宫</h2></div><div class="chartSchoolBar" role="group" aria-label="排盘方式"><button type="button" data-chart-school="sanhe" aria-pressed="true">三合</button><button type="button" data-chart-school="feixing" aria-pressed="false">飞星</button><button type="button" data-chart-school="sihua" aria-pressed="false">四化</button></div><span class="natalLiveBadge">真太阳时校正</span></div>
+        <div id="siHuaControls" class="siHuaControls hidden"><label>四化层<select id="siHuaLayer"><option value="natal">生年四化</option><option value="daxian">大限四化</option><option value="annual">流年四化</option></select></label><label id="daXianField" class="hidden">大限<select id="siHuaDaXian"></select></label><label id="annualField" class="hidden">流年年份<input id="siHuaYear" type="number" min="1800" max="2200" step="1" aria-label="流年年份"></label></div>
+        <p id="chartSchoolHint" class="chartSchoolHint"></p><p id="chartSchoolStatus" class="chartSchoolStatus" role="status"></p><p id="solarCorrection"></p><p id="natalMeta"></p><div id="natalBoard" class="natalBoard"></div><div class="palaceLegend"><span class="legendMajor">主星</span><span class="legendLucky">辅曜</span><span class="legendSha">煞曜</span></div></section>
+      <div class="chartRight"><div class="rightModeBar"><div id="headerModes" class="headerModes hidden"><div class="modeSwitch" role="tablist" aria-label="解读方式"><button id="analysisMode" class="active" type="button" role="tab" aria-selected="true">命盘分析</button><button id="chatMode" type="button" role="tab" aria-selected="false">AI 对话</button></div></div></div>
+        <section id="analysisPanel" class="analysisPanel"><nav id="tabs" class="sectionNav" aria-label="分析主题"></nav><div class="analysisScroll"><div class="insightLead"><span id="insightStar"></span><h2 id="insightTitle"></h2><p id="insightSummary"></p></div><div class="detailPanel" id="detailPanel"><h2 id="detailTitle">命格总览 · 完整解读</h2><article id="chartContent"></article></div></div></section>
+        <section id="chatPanel" class="chatPanel hidden" aria-label="AI 对话"><div class="chatWorkspace"><aside class="sessionSidebar" aria-label="最近对话"><div class="sidebarHead"><span class="eyebrow">CONVERSATIONS</span><h3>最近对话</h3><button id="chatNewSession" type="button">＋ 新对话</button></div><div id="chatSessionList" class="chatSessionList"></div><button id="chatMoreSessions" class="textButton hidden" type="button">加载更多会话</button></aside><div class="chatMain"><div class="chatHeading"><h2 id="chatTitle">AI 对话</h2></div><div class="chatHistoryShell"><nav class="questionRail" aria-label="用户提问定位"><div id="questionNav"></div><button id="moreQuestions" class="textButton hidden" type="button" title="加载更多提问">···</button><span id="questionTooltip" class="questionTooltip hidden"></span></nav><div id="history"><button id="older" class="textButton hidden" type="button">加载更早的消息</button><div id="chatEmpty" class="chatEmpty"><span>✦</span><strong>从一个问题开始</strong><p>例如：结合命盘与《天纪》，我的事业方向有什么值得注意？</p></div><div id="messages"></div></div></div><div id="composer"><label for="question">提问</label><div class="composerInput"><textarea id="question" maxlength="4000" rows="1" placeholder="输入问题"></textarea><button id="ask" type="button" aria-label="发送问题">↑</button></div><div class="composerFoot"><span id="notice" role="status"></span></div></div></div></div></section>
+      </div>
+    </div>
+  </section>
+
+  <dialog id="authDialog" aria-labelledby="authTitle"><div class="authTop"><h2 id="authTitle">登录后继续</h2><button id="authClose" type="button">返回首页</button></div><p class="authIntro">登录后保存每一次命盘会话，换设备也能继续阅读。</p><div class="authTabs"><button id="authLoginTab" class="active" type="button">密码登录</button><button id="authSwitch" type="button">注册账号</button></div><form id="authForm"><label id="usernameLabel" class="hidden">用户名<input id="username" autocomplete="username" placeholder="设置用户名"></label><label id="accountLabel">用户名或邮箱<input id="loginAccount" autocomplete="username" placeholder="请输入用户名或邮箱"></label><label id="emailLabel" class="hidden">邮箱（可选）<input id="email" type="email" autocomplete="email" placeholder="用于邮箱登录"></label><label>密码<input id="password" type="password" autocomplete="current-password" placeholder="请输入密码"><small id="passwordHelp" class="fieldHelp hidden">密码至少 10 位，最多 128 位</small></label><label id="confirmLabel" class="hidden">确认密码<input id="confirm" type="password" autocomplete="new-password" placeholder="再次输入密码"></label><p id="authNotice" role="status"></p><button type="submit" id="authSubmit" class="primaryButton">登录并继续</button></form><p class="authFoot">当前支持密码登录；注册后即可保存会话。</p></dialog>
+<dialog id="actionDialog" class="actionDialog" aria-labelledby="actionTitle" aria-describedby="actionMessage"><form id="actionForm" novalidate><h2 id="actionTitle"></h2><p id="actionMessage"></p><label id="actionField" for="actionInput"><span id="actionLabel">会话标题</span><input id="actionInput" maxlength="160" autocomplete="off"></label><p id="actionError" role="status"></p><div class="actionButtons"><button id="actionCancel" type="button">取消</button><button id="actionConfirm" type="submit">确认</button></div></form></dialog>
+<footer class="sourceFooter">本项目使用了 <strong>紫微斗数开源样本数据集 v4.0</strong> 来源：<a href="https://github.com/Renhuai123/ziwei-doushu" target="_blank" rel="noopener noreferrer">https://github.com/Renhuai123/ziwei-doushu</a> 作者：王多鱼AI</footer></body>
+</html>
