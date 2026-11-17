@@ -5,6 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Check committed location resources
+        run: |
+          git ls-files --error-unmatch \
+            src/ziwei/data/china_divisions.json \
+            src/ziwei/data/division_names_snapshot.json \
+            src/ziwei/data/taiwan_townships_snapshot.json \
+            src/ziwei/data/README.md \
+            src/ziwei/data/LICENSE-AreaCity.txt \
+            src/ziwei/data/LICENSE-mumuy.txt \
+            src/ziwei/data/LICENSE-taiwan-atlas.txt
       - uses: astral-sh/setup-uv@v6
         with:
           version: '0.9.8'

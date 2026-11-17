@@ -13,6 +13,13 @@ FILES = {
 DIRECTORIES = {'src', 'static', 'sql', 'scripts', 'tests', 'docs', 'deploy', '.github'}
 EXCLUDED = {'__pycache__', '.pytest_cache', 'certbot', 'node_modules', '.DS_Store'}
 SECRET = re.compile(rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bsk-[A-Za-z0-9_-]{24,}')
+REQUIRED_RESOURCES = {
+    Path('src/ziwei/data') / name for name in (
+        'china_divisions.json', 'division_names_snapshot.json',
+        'taiwan_townships_snapshot.json', 'README.md', 'LICENSE-AreaCity.txt',
+        'LICENSE-mumuy.txt', 'LICENSE-taiwan-atlas.txt',
+    )
+}
 
 
 def source_files():
@@ -43,6 +50,10 @@ def main():
     args = parser.parse_args()
     # Validate all input before opening output; never publish a partial checked set.
     files = list(source_files())
+    missing = REQUIRED_RESOURCES - {relative for _, relative in files}
+    if missing:
+        raise ValueError('Required location resources are missing: ' +
+                         ', '.join(str(path) for path in sorted(missing)))
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with tarfile.open(args.output, 'w:gz') as archive:
         for path, relative in files:
